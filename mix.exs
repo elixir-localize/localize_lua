@@ -90,6 +90,7 @@ defmodule Localize.Lua.MixProject do
       extras: [
         "README.md",
         "guides/using-in-lua.md",
+        "guides/using-in-ash-lua.md",
         "guides/using-in-ash-cms.md",
         "CHANGELOG.md",
         "LICENSE.md"
