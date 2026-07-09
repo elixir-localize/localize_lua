@@ -16,6 +16,12 @@ def deps do
 end
 ```
 
+`Localize` requires OTP 27+'s built-in `:json` module. On **OTP 26**, also add the polyfill to your own deps, otherwise `Localize` raises at application start:
+
+```elixir
+{:json_polyfill, "~> 0.2 or ~> 1.0"}
+```
+
 ## Usage
 
 Install the API into a VM and evaluate a script:

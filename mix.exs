@@ -47,7 +47,21 @@ defmodule Localize.Lua.MixProject do
       {:ex_doc, "~> 0.34", only: [:dev], runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev], runtime: false}
-    ]
+    ] ++ maybe_json_polyfill()
+  end
+
+  # Localize requires OTP 27+'s built-in `:json` module. On OTP 26 it needs the
+  # json_polyfill (EEP 68) — provided here for THIS project's own dev/test/CI
+  # only. `only:` deps never enter the hex package requirements, so OTP 26
+  # consumers add {:json_polyfill, "~> 0.2 or ~> 1.0"} to their own deps. The
+  # conditional avoids fetching it on OTP >= 27, where the polyfill's own build
+  # fails because `:json` is already built in.
+  defp maybe_json_polyfill do
+    if Code.ensure_loaded?(:json) do
+      []
+    else
+      [{:json_polyfill, "~> 0.2 or ~> 1.0", only: [:dev, :test]}]
+    end
   end
 
   defp package do
