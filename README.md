@@ -76,6 +76,14 @@ local summary = localize.message(
 
 Every function accepts an optional trailing options table (`{locale = ..., format = ...}`) forwarded to the corresponding `Localize` function.
 
+## Guides
+
+* [Using Localize.Lua in Lua](https://hexdocs.pm/localize_lua/using-in-lua.html) — driving the `localize` API from Lua: how values cross the Elixir↔Lua boundary, options tables, MessageFormat 2 pluralisation, and the current limitations.
+
+* [Using Localize.Lua with AshLua](https://hexdocs.pm/localize_lua/using-in-ash-lua.html) — installing `localize` onto an [AshLua](https://github.com/ash-project/ash_lua) VM so a script formats data with `localize.*` right alongside its Ash calls.
+
+* [Using Localize.Lua in Ash CMS](https://hexdocs.pm/localize_lua/using-in-ash-cms.html) — wiring `localize` into the [Ash CMS](https://codeberg.org/olivermt/ash_cms) render path, and how it complements the CMS translation helpers.
+
 ## Safety
 
 * **Never raises on the render path.** Every binding returns a string and falls back to a safe rendering of its input on any error — an unknown locale, an unparseable date, a malformed table — so a broken template degrades gracefully instead of crashing the host.
