@@ -42,8 +42,8 @@ defmodule Localize.Lua.MixProject do
 
   defp deps do
     [
-      {:lua, "~> 1.0.0-rc"},
-      {:localize, "~> 0.48"},
+      {:lua, "~> 1.0"},
+      {:localize, "~> 1.0-rc"},
       {:ex_doc, "~> 0.34", only: [:dev], runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev], runtime: false}
