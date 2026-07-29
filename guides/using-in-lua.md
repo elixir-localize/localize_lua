@@ -62,6 +62,9 @@ localize.territory_name("AU")                        -- "Australia"
 localize.language_name("de")                         -- "German"
 ```
 
+> #### Non-breaking spaces in output {: .info}
+> CLDR separates some elements with Unicode spaces that look ordinary but are distinct code points — a narrow no-break space (U+202F) before `AM`/`PM` (`2:30:00 PM`), and a no-break space (U+00A0) between a number and a trailing currency symbol (German `1.234,56 €`). Rendered output is correct; just compare it by rendering rather than exact ASCII string match when asserting on it in tests.
+
 ### Options tables
 
 Options are a Lua table whose keys mirror the underlying `Localize` option:

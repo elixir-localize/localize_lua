@@ -41,7 +41,7 @@ defp put_i18n(lua, site, opts) do
 end
 ```
 
-Add `{:localize_lua, "~> 0.1"}` to the Ash CMS `mix.exs` deps. That is the whole integration — every template can now call `localize.*`.
+Add `{:localize_lua, "~> 1.0"}` to the Ash CMS `mix.exs` deps. That is the whole integration — every template can now call `localize.*`.
 
 > This mirrors how `t`/`lt` are installed; it is not a workaround. If you would rather gate it, wrap the install in a config check (`if Application.get_env(:ash_cms, :localize_formatting, true), do: ...`).
 
@@ -106,7 +106,7 @@ Ash CMS templates may be authored by non-developers in the editor. `Localize.Lua
 
 ## Checklist
 
-1. Add `{:localize_lua, "~> 0.1"}` to Ash CMS deps.
+1. Add `{:localize_lua, "~> 1.0"}` to Ash CMS deps.
 2. Append `|> Localize.Lua.install()` to `put_i18n/3`.
 3. (Recommended) wrap template evaluation in `Localize.with_locale/2` using the resolved i18n locale.
 4. Run `mix localize.download_locales <locales>` for every locale the site serves.

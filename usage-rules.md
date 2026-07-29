@@ -29,7 +29,7 @@ Rules for LLM coding agents using `Localize.Lua` as a dependency.
 | `localize.relative(number, unit, options?)` | `Localize.DateTime.Relative.to_string/2` |
 | `localize.unit(value, unit_name, options?)` | `Localize.Unit.new/2` + `to_string/2` |
 | `localize.list(array, options?)` | `Localize.List.to_string/2` |
-| `localize.message(mf2, bindings?)` | `Localize.Message.format/3` |
+| `localize.message(mf2, bindings?)` | `Localize.Message.format/2` |
 | `localize.territory_name(code, options?)` | `Localize.Territory.display_name/2` |
 | `localize.language_name(code, options?)` | `Localize.Language.display_name/2` |
 

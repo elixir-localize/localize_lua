@@ -11,7 +11,7 @@ Because Luerl runs entirely on the BEAM, there is no foreign runtime to bridge: 
 ```elixir
 def deps do
   [
-    {:localize_lua, "~> 0.1"}
+    {:localize_lua, "~> 1.0"}
   ]
 end
 ```
@@ -108,4 +108,4 @@ mix docs
 
 ## License
 
-Apache-2.0. See [LICENSE.md](LICENSE.md).
+Apache-2.0. See [LICENSE.md](https://github.com/elixir-localize/localize_lua/blob/v1.0.0/LICENSE.md).

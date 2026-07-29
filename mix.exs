@@ -1,7 +1,7 @@
 defmodule Localize.Lua.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "1.0.0"
   @source_url "https://github.com/elixir-localize/localize_lua"
 
   def project do
@@ -44,7 +44,7 @@ defmodule Localize.Lua.MixProject do
     [
       {:lua, "~> 1.0"},
       {:localize, "~> 1.0-rc"},
-      {:ex_doc, "~> 0.34", only: [:dev], runtime: false},
+      {:ex_doc, "~> 0.34", only: [:dev, :release], runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev], runtime: false}
     ] ++ maybe_json_polyfill()
@@ -87,6 +87,7 @@ defmodule Localize.Lua.MixProject do
     [
       main: "readme",
       source_ref: "v#{@version}",
+      formatters: ["html", "markdown"],
       extras: [
         "README.md",
         "guides/using-in-lua.md",

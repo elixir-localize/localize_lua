@@ -97,6 +97,12 @@ jobs:
         if: matrix.lint
         run: mix credo --strict
 
+      - name: Check docs
+        if: matrix.lint
+        env:
+          MIX_ENV: release
+        run: mix docs --warnings-as-errors
+
       - name: Restore PLT cache
         if: matrix.lint
         uses: actions/cache@v5
