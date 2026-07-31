@@ -44,7 +44,7 @@ defmodule Localize.Lua.MixProject do
     [
       {:lua, "~> 1.0"},
       {:localize, "~> 1.0-rc"},
-      {:ex_doc, "~> 0.34", only: [:dev], runtime: false},
+      {:ex_doc, "~> 0.34", only: [:dev, :test, :release], runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev], runtime: false}
     ] ++ maybe_json_polyfill()
